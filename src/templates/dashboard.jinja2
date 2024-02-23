@@ -1,0 +1,20 @@
+{% extends "layout.jinja2" %}
+
+{% block customstyles %}
+    <link href="../static/css/custom.css" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+{% include "header.jinja2" %}
+{% endblock %}
+
+{% block content %}
+    <main class="flex-shrink-0">
+      <div class="container">
+        <div class="mt-5">
+          <p class="lead">Howdy, {{ current_user.email }}</p>
+          <p>Should you have any questions, please do not hesitate to reach out to <a href="mailto:postmaster@purehype.no">postmaster@purehype.no</a>.</p>
+        </div>
+      </div>
+    </main>
+{% endblock %}
