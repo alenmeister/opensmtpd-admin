@@ -18,12 +18,7 @@ auth_blueprint = Blueprint(
 
 @auth_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
-    """
-    Authentication view for user accounts.
-    
-    GET requests display the login form.
-    POST requests authenticates the current user.
-    """
+    """Authenticate an existing user"""
 
     if current_user.is_authenticated:
         return redirect(url_for('main_blueprint.dashboard'))
