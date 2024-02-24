@@ -14,6 +14,7 @@ login_manager = LoginManager()
 
 def create_app() -> Flask:
     """Create application object"""
+
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
 
