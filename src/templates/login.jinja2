@@ -11,7 +11,7 @@
               {{ message }}
             </div>
             {% endfor %}
-            <form class="p-4 p-md-2" action="/login", method="POST">
+            <form class="p-4 p-md-2" action="/login" method="POST">
               {{ form.csrf_token }}
               <div class="form-floating mb-3">
                 {{ form.email(type='email', class='form-control', placeholder='foo@domain.tld') }}
