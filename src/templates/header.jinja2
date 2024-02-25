@@ -1,20 +1,15 @@
+{% from 'bootstrap5/nav.html' import render_nav_item %}
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link {% if active_url == 'dashboard' %} active {% endif %}" href="/">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if active_url == 'account' %} active {% endif %}" href="/account">Manage Account</a>
-              </li>
+              {{ render_nav_item('main_blueprint.dashboard', 'Dashboard', _use_li=True) }}
+              {{ render_nav_item('main_blueprint.account', 'Manage Account', _use_li=True) }}
               <li class="nav-item">
                 <a class="nav-link disabled" href="/stats"><s>Statistics</s></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-              </li>
+              {{ render_nav_item('main_blueprint.logout', 'Logout', _use_li=True) }}
             </ul>
           </div>
         </div>
