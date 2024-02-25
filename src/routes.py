@@ -20,7 +20,6 @@ def dashboard():
     return render_template(
         'dashboard.jinja2',
         title='Dashboard',
-        active_url='dashboard',
         current_user=current_user
     )
 
@@ -45,7 +44,6 @@ def account():
     return render_template(
         'account.jinja2',
         title='Manage Account',
-        active_url='account',
         form=form
     )
 
