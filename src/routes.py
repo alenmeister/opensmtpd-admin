@@ -16,9 +16,9 @@ main_blueprint = Blueprint(
 @main_blueprint.route('/', methods=['GET'])
 @login_required
 def dashboard():
-    """Dashboard view"""
+    """Dashboard view for all authenticated users"""
     return render_template(
-        'dashboard.jinja2', 
+        'dashboard.jinja2',
         title='Dashboard',
         active_url='dashboard',
         current_user=current_user
@@ -28,19 +28,19 @@ def dashboard():
 @main_blueprint.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
-    """Account view"""
+    """Account view with user details and profile management"""
 
     form = UpdateForm()
 
-    if form.validate_on_submit():
-        if current_user.verify_password(form.old_password.data):
-            current_user.hash_password(form.new_password.data)
+    if form.is_submitted():
+        if current_user.verify_password(password=form.current_password.data):
+            current_user.hash_password(password=form.new_password.data)
             db.session.commit()
 
-            flash('Your password has successfully been updated')
+            flash('Your password has successfully been updated', category='success')
             return redirect(url_for('main_blueprint.account'))
 
-        flash('Your original password is invalid')
+        flash('Your current password is invalid', category='warning')
 
     return render_template(
         'account.jinja2',
