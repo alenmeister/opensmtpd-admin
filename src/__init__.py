@@ -2,6 +2,7 @@
 
 from flask import Flask
 from flask_bcrypt import Bcrypt
+from flask_bootstrap import Bootstrap5
 from flask_cors import CORS
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
@@ -10,6 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 bcrypt = Bcrypt()
 db = SQLAlchemy()
 login_manager = LoginManager()
+bootstrap = Bootstrap5()
 
 
 def create_app() -> Flask:
@@ -23,6 +25,7 @@ def create_app() -> Flask:
     bcrypt.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
+    bootstrap.init_app(app)
 
     with app.app_context():
         # pylint: disable=import-outside-toplevel
