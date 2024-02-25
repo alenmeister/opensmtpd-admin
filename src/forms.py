@@ -43,6 +43,8 @@ class UpdateForm(FlaskForm):
         'Confirm Password',
         validators=[
             DataRequired(),
-            EqualTo('password', message='Passwords must match')
+            EqualTo('new_password', message='Passwords must match')
         ]
     )
+
+    submit = SubmitField('Update password')
