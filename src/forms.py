@@ -24,17 +24,18 @@ class LoginForm(FlaskForm):
 class UpdateForm(FlaskForm):
     """Update credentials form"""
 
-    old_password = PasswordField('Old password', validators=[DataRequired()])
+    current_password = PasswordField('Current password', validators=[DataRequired()])
 
     new_password = PasswordField(
         'New password',
         validators=[
             DataRequired(),
-            Length(min=12, message='Password must be 12 characters or longer'),
-            #Regexp(
-            #    '(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$',
-            #    message='Password must contain at least one uppercase, one lowercase and one number'
-            #)
+            Length(min=10, message='Password must be 10 characters or longer'),
+            # TODO: Tidy up messy regex expression
+            Regexp(
+                '(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$',
+                message='Password must contain at least one uppercase, one lowercase and one number'
+            )
         ]
     )
 
