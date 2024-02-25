@@ -25,8 +25,6 @@ class UpdateForm(FlaskForm):
     """Update credentials form"""
 
     current_password = PasswordField('Current password', validators=[DataRequired()])
-
-    # TODO: Add regex validation
     new_password = PasswordField(
         'New password',
         validators=[
