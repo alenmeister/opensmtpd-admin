@@ -8,7 +8,7 @@ from . import bcrypt, db
 
 
 class User(UserMixin, db.Model):
-    """User model"""
+    """User model for storing credentials"""
 
     __tablename__ = 'credentials'
 

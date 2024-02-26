@@ -1,4 +1,4 @@
-"""Application config"""
+"""Config settings for development and production environments"""
 
 from os import environ, path
 
@@ -12,7 +12,7 @@ SQLITE_DB = 'sqlite:///' + path.join(BASE_DIR, 'opensmtpd.db')
 
 class Config:
     # pylint: disable=too-few-public-methods
-    """Set app configuration from environment variables."""
+    """Set configuration from environment variables"""
 
     ENVIRONMENT = environ.get('ENVIRONMENT')
 
