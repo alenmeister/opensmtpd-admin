@@ -33,7 +33,7 @@ def login():
             next_page = request.args.get('next')
             return redirect(next_page or url_for('main_blueprint.dashboard'))
 
-        flash("Invalid username and password combination")
+        flash('Invalid username and password combination', category='warning')
         return redirect(url_for('auth_blueprint.login'))
 
     return render_template(
