@@ -31,7 +31,7 @@ def account():
 
     form = UpdateForm()
 
-    if form.is_submitted():
+    if form.validate_on_submit():
         if current_user.verify_password(password=form.current_password.data):
             current_user.hash_password(password=form.new_password.data)
             db.session.commit()
