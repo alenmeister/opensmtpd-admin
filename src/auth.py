@@ -48,7 +48,8 @@ def load_user(user_id: str) -> Optional[User]:
     """
     Verify if user is authenticated upon page load.
 
-    :param str user_id: user_id (email) to retrieve from session cookie.
+    :param user_id:
+        Email (user_id) to retrieve from session cookie.
     """
     if user_id is not None:
         return User.query.get(user_id)
@@ -58,5 +59,5 @@ def load_user(user_id: str) -> Optional[User]:
 @login_manager.unauthorized_handler
 def unauthorized():
     """Redirect unauthorized users to login page"""
-    flash("To access this page you must be authenticated")
+    flash('To access this page you must be authenticated', category='warning')
     return redirect(url_for('auth_blueprint.login'))
