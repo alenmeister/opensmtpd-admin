@@ -1,14 +1,12 @@
-{% extends "layout.jinja2" %}
+{% extends "_layout.jinja2" %}
 
 {% assets "main_scss_bundle" %}
-    <link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+  <link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
 {% endassets %}
 
 {% block header %}
-{% include "header.jinja2" %}
+{% include "_header.jinja2" %}
 {% endblock %}
-
-{% from 'bootstrap5/form.html' import render_field %}
 
 {% block content %}
     <main class="flex-shrink-0">
@@ -17,13 +15,7 @@
           <p class="lead">Credentials</p>
           <p>In order to change your password you must abide to certain system requirements.<br/>
             Your password must be 10 or more characters with a mix of letters, numbers and symbols.</p>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-              {% if messages %}
-                {% for category, message in messages %}
-                  <div class="alert alert-{{ category }} col-md-4"> {{ message }}</div>
-                {% endfor %}
-              {% endif %}
-            {% endwith %}
+            {{ render_messages() }}
             <form action="/account" method="POST">
               {{ form.csrf_token() }}
               {{ render_field(form.current_password, form_group_classes='col-md-2 mb-2') }}
