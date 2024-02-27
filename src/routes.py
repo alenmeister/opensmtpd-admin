@@ -13,7 +13,8 @@ main_blueprint = Blueprint(
 )
 
 
-@main_blueprint.route('/', methods=['GET'])
+@main_blueprint.route('/')
+@main_blueprint.route('/dashboard')
 @login_required
 def dashboard():
     """Dashboard view for all authenticated users"""
