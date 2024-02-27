@@ -1,11 +1,11 @@
-{% extends "layout.jinja2" %}
+{% extends "_layout.jinja2" %}
 
 {% assets "main_scss_bundle" %}
-    <link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+  <link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
 {% endassets %}
 
 {% block header %}
-{% include "header.jinja2" %}
+{% include "_header.jinja2" %}
 {% endblock %}
 
 {% block content %}
