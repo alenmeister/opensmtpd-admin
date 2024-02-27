@@ -1,4 +1,4 @@
-{% extends "layout.jinja2" %}
+{% extends "_layout.jinja2" %}
 
 {% block content %}
     <main>
@@ -14,31 +14,24 @@
             <form class="p-4 p-md-2" action="/login" method="POST">
               {{ form.csrf_token }}
               <div class="form-floating mb-3">
-                {{ form.email(type='email', class='form-control', placeholder='foo@domain.tld') }}
-                {{ form.email.label(for='floatingInput') }}
-                {% if form.email.errors %}
-                  <ul class="errors">
+              {% if form.email.errors %}
+                {{ form.email(type='email', class='form-control is-invalid', placeholder='foo@domain.tld') }}
+                  <div class="invalid-feedback d-block">
                     {% for error in form.email.errors %}
-                      <li>{{ error }}</li>{% endfor %}
-                  </ul>
-                {% endif %}
+                      {{ error }}
+                    {% endfor %}
+                  </div>
+              {% else %}
+                {{ form.email(type='email', class='form-control', placeholder='foo@domain.tld') }}
+              {% endif %}
+              {{ form.email.label(for='floatingInput') }}
               </div>
               <div class="form-floating mb-3">
                 {{ form.password(class='form-control', placeholder='Password') }}
                 {{ form.password.label(for='floatingPassword') }}
-                {% if form.password.errors %}
-                  <ul class="errors">
-                    {% for error in form.password.errors %}
-                      <li>{{ error }}</li>{% endfor %}
-                  </ul>
-                {% endif %}
               </div>
-              <div class="checkbox mb-3">
-                <label>
-                  {{ form.remember }} Remember me
-                </label>
-              </div>
-              {{ form.submit(class='w-100 btn btn-lg btn-primary') }}
+              {{ render_field(form.remember) }}
+              {{ render_field(form.submit, button_size='lg', class='w-100') }}
             </form>
           </div>
         </div>
