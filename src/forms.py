@@ -1,14 +1,14 @@
 """Custom forms and validators"""
 
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, PasswordField, StringField, SubmitField
+from wtforms import BooleanField, EmailField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 
 class LoginForm(FlaskForm):
     """Authentication form"""
 
-    email = StringField(
+    email = EmailField(
         'Email address',
         validators=[
             DataRequired(),
@@ -30,9 +30,15 @@ class UpdateForm(FlaskForm):
         validators=[
             DataRequired(),
             Length(min=10, message='Password must be 10 characters or longer'),
-            EqualTo('confirm_password', message='Passwords must match')
+            EqualTo('confirm_password', message='')
         ]
     )
 
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired()])
+    confirm_password = PasswordField(
+        'Confirm Password', 
+        validators=[
+            DataRequired(),
+            EqualTo('new_password', message='Passwords must match!')
+        ]
+    )
     submit = SubmitField('Update password')
