@@ -15,7 +15,9 @@
           <p class="lead">Credentials</p>
           <p>In order to change your password you must abide to certain system requirements.<br/>
             Your password must be 10 or more characters with a mix of letters, numbers and symbols.</p>
-            {{ render_messages(dismissible=true) }}
+            <div class="col-md-5">
+              {{ render_messages(dismissible=true) }}
+            </div>
             <form action="/account" method="POST">
               {{ form.csrf_token() }}
               {{ render_field(form.current_password, form_group_classes='col-md-2 mb-2') }}
