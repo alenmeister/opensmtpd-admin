@@ -11,19 +11,19 @@
               {{ form.csrf_token }}
               <div class="form-floating mb-3">
               {% if form.email.errors %}
-                {{ form.email(type='email', class='form-control is-invalid', placeholder='foo@domain.tld') }}
+                {{ form.email(type='email', class='form-control is-invalid') }}
                   <div class="invalid-feedback d-block">
                     {% for error in form.email.errors %}
                       {{ error }}
                     {% endfor %}
                   </div>
               {% else %}
-                {{ form.email(type='email', class='form-control', placeholder='foo@domain.tld') }}
+                {{ form.email(type='email', class='form-control') }}
               {% endif %}
               {{ form.email.label(for='floatingInput') }}
               </div>
               <div class="form-floating mb-3">
-                {{ form.password(class='form-control', placeholder='Password') }}
+                {{ form.password(class='form-control') }}
                 {{ form.password.label(for='floatingPassword') }}
               </div>
               {{ render_field(form.remember) }}
