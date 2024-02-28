@@ -20,11 +20,11 @@
               {% else %}
                 {{ form.email(type='email', class='form-control') }}
               {% endif %}
-              {{ form.email.label(for='floatingInput') }}
+              {{ form.email.label(for='email') }}
               </div>
               <div class="form-floating mb-3">
                 {{ form.password(class='form-control') }}
-                {{ form.password.label(for='floatingPassword') }}
+                {{ form.password.label(for='password') }}
               </div>
               {{ render_field(form.remember) }}
               {{ render_field(form.submit, button_size='lg', class='w-100') }}
