@@ -1,4 +1,5 @@
 """Global pytest fixtures"""
+
 import pytest
 
 from src import create_app
