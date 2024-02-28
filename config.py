@@ -11,7 +11,6 @@ SQLITE_DB = 'sqlite:///' + path.join(BASE_DIR, 'opensmtpd.db')
 
 
 class Config:
-    # pylint: disable=too-few-public-methods
     """Set configuration from environment variables"""
 
     ENVIRONMENT = environ.get('ENVIRONMENT')
