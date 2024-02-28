@@ -13,10 +13,11 @@ class LoginForm(FlaskForm):
         validators=[
             DataRequired(),
             Email(message='Enter a valid email address')
-        ]
+        ],
+        render_kw={'placeholder':'foo@domain.tld'}
     )
 
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={'placeholder':'Password'})
     remember = BooleanField('Remember me')
     submit = SubmitField('Go')
 
