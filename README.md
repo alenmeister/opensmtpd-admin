@@ -24,3 +24,8 @@ git clone git@github.com:alenmeister/opensmtpd-admin.git
 cd opensmtpd-admin
 make deploy
 ```
+
+## TODO
+- [ ] Implement regex validation for password updates
+- [ ] Add `last_changed` column to credentials table
+- [ ] Fetch statistics from the reporting API provided by OpenSMTPd
