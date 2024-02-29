@@ -6,6 +6,7 @@ from flask_bootstrap import Bootstrap5
 from flask_cors import CORS
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from flask_minify import Minify
 
 # Extension instances
 bcrypt = Bcrypt()
@@ -22,6 +23,7 @@ def create_app() -> Flask:
 
     # Initialize plugins
     CORS(app)
+    Minify(app=app, html=True, js=True, cssless=True)
     bcrypt.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
