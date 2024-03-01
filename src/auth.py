@@ -1,6 +1,7 @@
 """Routes for user authentication"""
 
 from typing import Optional
+from urllib.parse import urlsplit
 
 from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_user
@@ -31,7 +32,11 @@ def login():
         if user and user.verify_password(password=form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
-            return redirect(next_page or url_for('main_blueprint.dashboard'))
+
+            if not next_page or urlsplit(next_page).netloc != '':
+                next_page = url_for('main_blueprint.dashboard')
+
+            return redirect(next_page)
 
         flash('Invalid username and password combination', category='warning')
         return redirect(url_for('auth_blueprint.login'))
