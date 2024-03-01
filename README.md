@@ -1,6 +1,6 @@
 # OpenSMTPd-Admin
 
-Web interface for OpenSMTPd that manages credentials for virtual email accounts. Currently limited to regular users. Extended version with administrator roles will be implemented later on. Statistics for password updates and email traffic are provided on a per-user basis.
+Web interface for OpenSMTPd that manages credentials for virtual email accounts. Currently limited to only regular users. Extended version with role based access management will be implemented later on. Statistics for password updates and email traffic are provided on a per-user basis.
 
 ## Development
 
