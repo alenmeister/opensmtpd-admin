@@ -26,7 +26,8 @@ make deploy
 ```
 
 ## TODO
-- [ ] Implement regex validation for password updates
+- [ ] Validate fields using regex when updating password
 - [ ] Add `last_changed` column to credentials table
+- [ ] Implement logic for role based identities
 - [ ] Fetch statistics from the reporting API provided by OpenSMTPd
 - [ ] Deploy and execute a dry-run on OpenBSD with httpd as proxy
