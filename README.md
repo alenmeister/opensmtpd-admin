@@ -29,3 +29,4 @@ make deploy
 - [ ] Implement regex validation for password updates
 - [ ] Add `last_changed` column to credentials table
 - [ ] Fetch statistics from the reporting API provided by OpenSMTPd
+- [ ] Deploy and execute a dry-run on OpenBSD with httpd as proxy
