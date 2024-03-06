@@ -27,7 +27,7 @@ make deploy
 ```
 
 ## TODO
-- [ ] Use `pipenv` to manage virtualenvs and packages
+- [X] Use `pipenv` to manage virtualenvs and packages
 - [ ] Validate fields using regex when updating password
 - [ ] Add `last_changed` column to credentials table
 - [ ] Implement logic for role based identities
