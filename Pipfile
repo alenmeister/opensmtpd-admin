@@ -4,22 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-bootstrap-flask = "==2.3.3"
-cssmin = "==0.2.0"
-email-validator = "==2.1.0.post1"
-flask = "==3.0.2"
-flask-assets = "==2.1.0"
-flask-bcrypt = "==1.0.1"
-flask-cors = "==4.0.0"
-flask-login = "==0.6.3"
-flask-minify = "==0.42"
-flask-sqlalchemy = "==3.1.1"
-flask-wtf = "==1.2.1"
-pyscss = "==1.4.0"
-python-dotenv = "==1.0.1"
+bootstrap-flask = "~=2.3.3"
+cssmin = "~=0.2.0"
+email-validator = "~=2.1.0.post1"
+flask = "~=3.0.2"
+flask-assets = "~=2.1.0"
+flask-bcrypt = "~=1.0.1"
+flask-cors = "~=4.0.0"
+flask-login = "~=0.6.3"
+flask-minify = "~=0.42"
+flask-sqlalchemy = "~=3.1.1"
+flask-wtf = "~=1.2.1"
+pyscss = "~=1.4.0"
+python-dotenv = "~=1.0.1"
+uwsgi = "~=2.0.24"
 
 [dev-packages]
-pytest = "==8.0.2"
+pytest = "~=8.0.2"
 
 [requires]
 python_version = "3.11"
