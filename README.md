@@ -21,12 +21,13 @@ Replace the values in the provided .env with your desired values:
 
 ### Installation
 
-Bootstrap and start the application with `make deploy`
+Bootstrap and start the application with `pipenv`
 
 ```shell
 git clone git@github.com:alenmeister/opensmtpd-admin.git
 cd opensmtpd-admin
-make deploy
+pipenv install --dev --python 3.11
+pipenv run uwsgi --http :5000 --wsgi-file wsgi.py --callable app
 ```
 
 ## TODO
