@@ -3,6 +3,9 @@
 Web interface for OpenSMTPD that manages credentials for virtual email accounts. Currently limited to only regular users. 
 Extended version with role based access management will be implemented later on. Statistics for password updates and email traffic are provided on a per-user basis.
 
+## Requirements
+Assuming you have OpenSMTPD configured with virtual user support and some type of database storage, the only external dependencies required are Python 3.11 together with pip. Make sure to install pipenv globally first: `pip install --user pipenv`. All internal dependencies are handled through pipenv.
+
 ## Development
 
 Get started with local development in two steps:
